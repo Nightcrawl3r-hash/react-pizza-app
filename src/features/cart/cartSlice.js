@@ -1,15 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  cart: [
-    {
-      pizzaId: 16,
-      name: 'Mediterranean',
-      quantity: 2,
-      unutPrice: 5,
-      totalPrice: 69,
-    },
-  ],
+  cart: [],
 };
 
 const cartSlice = createSlice({
@@ -49,3 +41,11 @@ export const {
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
+
+export const getTotalCartQuantity = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
+
+export const getTotalCartPrice = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
+
+//in larger applications for performance oprimization use selector library of redux

@@ -3,7 +3,7 @@ import Button from '../../ui/Button';
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
 
-const fakeCart = [
+/* const fakeCart = [
   {
     pizzaId: 12,
     name: 'Mediterranean',
@@ -26,10 +26,10 @@ const fakeCart = [
     totalPrice: 15,
   },
 ];
-
+ */
 function Cart() {
   const username = useSelector((state) => state.user.userName);
-  const cart = fakeCart;
+  const cart = useSelector()
 
   return (
     <div className="px-4 py-3 ">
